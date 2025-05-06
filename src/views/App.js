@@ -1,5 +1,10 @@
 import logo from "./logo.svg";
 import "./App.scss";
+import MyComponent from "./Example/MyExample";
+/*
+   2 components: class components => render() {...}/ function components (function, arrow function) => return (...)
+  JSX
+*/
 
 function App() {
   return (
@@ -10,6 +15,8 @@ function App() {
         <a className="App-link" href="https://github.com/zabaoit" target="_blank" rel="noopener noreferrer">
           Learn React
         </a>
+        <MyComponent />
+        {/* <MyComponent></MyComponent> */}
       </header>
     </div>
   );

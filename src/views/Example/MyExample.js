@@ -8,6 +8,10 @@ class MyComponent extends React.Component {
     fb: "fb.com/zabaoit",
   };
 
+  handleClickButton = () => {
+    alert("Hello World");
+  };
+
   /* 
   JSX => return block
   fragment
@@ -20,6 +24,9 @@ class MyComponent extends React.Component {
         {/* <div className="abc"> */}
         <div className="first">Hello My Components, My name is {this.state.name} </div>
         <div className="second">facebook: {this.state.fb}</div>
+        <div className="third">
+          <button onClick={() => this.handleClickButton()}>Click me</button>
+        </div>
         {/* </div> */}
       </React.Fragment>
     );

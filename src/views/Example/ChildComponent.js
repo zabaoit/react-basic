@@ -28,9 +28,15 @@ class ChildComponent extends React.Component {
   fragment
   */
   render() {
+    console.log(">>> Check props: ", this.props);
+    // let name = this.props.name;
+    // let age = this.props.age;
+    let { name, age } = this.props;
     return (
       <>
-        <div>ChildComponent {this.props.name}</div>
+        <div>
+          ChildComponent name: {name} - {age}
+        </div>
       </>
     );
   }

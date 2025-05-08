@@ -2,48 +2,45 @@ import React from "react";
 
 class ChildComponent extends React.Component {
   state = {
-    firstName: "",
-    lastName: "",
+    showJobs: false,
   };
 
-  handleChangeFirstName = event => {
+  handleShowHide = () => {
     this.setState({
-      firstName: event.target.value,
+      showJobs: !this.state.showJobs,
     });
   };
-
-  handleChangeLastName = event => {
-    this.setState({
-      lastName: event.target.value,
-    });
-  };
-
-  handleSubMit = event => {
-    event.preventDefault();
-    console.log(">>> Check data input : ", this.state);
-  };
-
-  /* 
-  JSX => return block
-  fragment
-  */
   render() {
-    console.log(">>> Check props: ", this.props);
+    // console.log(">>> Check props: ", this.props);
     // let name = this.props.name;
     // let age = this.props.age;
     // key: value
     let { arrJobs } = this.props;
+    let { showJobs } = this.state;
+    let check = showJobs ? "showJobs = true" : "showJobs = false";
+    console.log(">>> check: ", check);
     return (
       <>
-        <div className="job-lists">
-          {arrJobs.map(item => {
-            return (
-              <div key={item.id}>
-                {item.title} - {item.salary}
-              </div>
-            );
-          })}
-        </div>
+        {!showJobs ? (
+          <div>
+            <button onClick={() => this.handleShowHide()}>Show</button>
+          </div>
+        ) : (
+          <>
+            <div className="job-lists">
+              {arrJobs.map(item => {
+                return (
+                  <div key={item.id}>
+                    {item.title} - {item.salary}
+                  </div>
+                );
+              })}
+            </div>
+            <div>
+              <button onClick={() => this.handleShowHide()}>Hide </button>
+            </div>
+          </>
+        )}
       </>
     );
   }

@@ -27,6 +27,9 @@ class ChildComponent extends React.Component {
           </div>
         ) : (
           <>
+            <div>
+              <button onClick={() => this.handleShowHide()}>Hide </button>
+            </div>
             <div className="job-lists">
               {arrJobs.map(item => {
                 return (
@@ -35,9 +38,6 @@ class ChildComponent extends React.Component {
                   </div>
                 );
               })}
-            </div>
-            <div>
-              <button onClick={() => this.handleShowHide()}>Hide </button>
             </div>
           </>
         )}

@@ -1,10 +1,9 @@
 import React from "react";
 import ChildComponent from "./ChildComponent";
+import AddComponent from "./AddComponent";
 
 class MyComponent extends React.Component {
   state = {
-    firstName: "",
-    lastName: "",
     arrJobs: [
       {
         id: 1,
@@ -24,23 +23,6 @@ class MyComponent extends React.Component {
     ],
   };
 
-  handleChangeFirstName = event => {
-    this.setState({
-      firstName: event.target.value,
-    });
-  };
-
-  handleChangeLastName = event => {
-    this.setState({
-      lastName: event.target.value,
-    });
-  };
-
-  handleSubMit = event => {
-    event.preventDefault();
-    // console.log(">>> Check data input : ", this.state);
-  };
-
   /* 
   JSX => return block
   fragment
@@ -48,17 +30,9 @@ class MyComponent extends React.Component {
   render() {
     return (
       <>
-        <form>
-          <label>First Name </label>
-          <input type="text" onChange={event => this.handleChangeFirstName(event)} /> <br></br>
-          <label>Last Name </label>
-          <input type="text" onChange={event => this.handleChangeLastName(event)} /> <br></br>
-          <button type="submit" onClick={event => this.handleSubMit(event)}>
-            Submit
-          </button>
-        </form>
+        <AddComponent />
 
-        <ChildComponent name={this.state.firstName} age={20} arrJobs={this.state.arrJobs} />
+        <ChildComponent arrJobs={this.state.arrJobs} />
       </>
     );
   }

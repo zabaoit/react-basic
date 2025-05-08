@@ -5,6 +5,23 @@ class MyComponent extends React.Component {
   state = {
     firstName: "",
     lastName: "",
+    arrJobs: [
+      {
+        id: 1,
+        title: "Developers",
+        salary: "500 $",
+      },
+      {
+        id: 2,
+        title: "Testers",
+        salary: "400 $",
+      },
+      {
+        id: 3,
+        title: "Project Managers",
+        salary: "1000 $",
+      },
+    ],
   };
 
   handleChangeFirstName = event => {
@@ -21,7 +38,7 @@ class MyComponent extends React.Component {
 
   handleSubMit = event => {
     event.preventDefault();
-    console.log(">>> Check data input : ", this.state);
+    // console.log(">>> Check data input : ", this.state);
   };
 
   /* 
@@ -41,7 +58,7 @@ class MyComponent extends React.Component {
           </button>
         </form>
 
-        <ChildComponent name={"BaoBao"} age={20} />
+        <ChildComponent name={this.state.firstName} age={20} arrJobs={this.state.arrJobs} />
       </>
     );
   }

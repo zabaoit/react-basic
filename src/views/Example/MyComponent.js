@@ -38,6 +38,14 @@ class MyComponent extends React.Component {
       arrJobs: currentJob,
     });
   };
+
+  componentDidUpdate(prevProps, prevState) {
+    console.log(">>> run component dit update: ", "prevState: ", prevState, "currentState: ", this.state);
+  }
+
+  componentDidMount() {
+    console.log(">>> run component did mount");
+  }
   /* 
   JSX => return block
   fragment

@@ -1,4 +1,5 @@
 import React from "react";
+import "./Demo.scss";
 
 class ChildComponent extends React.Component {
   state = {
@@ -28,12 +29,16 @@ class ChildComponent extends React.Component {
       <>
         {!showJobs ? (
           <div>
-            <button onClick={() => this.handleShowHide()}>Show</button>
+            <button className="btn-showHide" onClick={() => this.handleShowHide()}>
+              Show
+            </button>
           </div>
         ) : (
           <>
             <div>
-              <button onClick={() => this.handleShowHide()}>Hide </button>
+              <button className="btn-showHide" onClick={() => this.handleShowHide()}>
+                Hide{" "}
+              </button>
             </div>
             <div className="job-lists">
               {arrJobs.map(item => {

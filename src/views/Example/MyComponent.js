@@ -8,21 +8,28 @@ class MyComponent extends React.Component {
       {
         id: 1,
         title: "Developers",
-        salary: "500 $",
+        salary: "500",
       },
       {
         id: 2,
         title: "Testers",
-        salary: "400 $",
+        salary: "400",
       },
       {
         id: 3,
         title: "Project Managers",
-        salary: "1000 $",
+        salary: "1000",
       },
     ],
   };
 
+  addNewJob = job => {
+    // console.log(">>> check job: ", job);
+
+    this.setState({
+      arrJobs: [...this.state.arrJobs, job],
+    });
+  };
   /* 
   JSX => return block
   fragment
@@ -30,7 +37,7 @@ class MyComponent extends React.Component {
   render() {
     return (
       <>
-        <AddComponent />
+        <AddComponent addNewJob={this.addNewJob} />
 
         <ChildComponent arrJobs={this.state.arrJobs} />
       </>

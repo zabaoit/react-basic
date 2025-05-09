@@ -1,6 +1,6 @@
 import logo from "./logo.svg";
 import "./App.scss";
-import MyComponent from "./Example/MyExample";
+import MyComponent from "./Example/MyComponent";
 /*
    2 components: class components => render() {...}/ function components (function, arrow function) => return (...)
   JSX

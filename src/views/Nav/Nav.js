@@ -1,5 +1,6 @@
 import react from "react";
 import "./Nav.scss";
+import { Link, NavLink } from "react-router-dom";
 
 class Nav extends react.Component {
   render() {
@@ -18,15 +19,15 @@ class Nav extends react.Component {
             <nav>
               <ul>
                 <li>
-                  <a href="/" className="active">
+                  <NavLink to="/" exact={true}>
                     Home
-                  </a>
+                  </NavLink>
                 </li>
                 <li>
-                  <a href="/todo">TodoApp</a>
+                  <NavLink to="/todo">Todo</NavLink>
                 </li>
                 <li>
-                  <a href="/about">About</a>
+                  <NavLink to="/about">About</NavLink>
                 </li>
               </ul>
             </nav>

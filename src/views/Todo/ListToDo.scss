@@ -1,0 +1,33 @@
+.List-todo-container {
+  .cursor:hover {
+    cursor: pointer;
+  }
+  .add-todo {
+    .add {
+      margin-left: 10px;
+    }
+  }
+  .list-todo-content {
+    width: 400px;
+    margin: 0 auto;
+    .todo-child {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 40px;
+      margin-top: 10px;
+      border-bottom: 1px solid grey;
+      //   h3 {
+      //     display: inline;
+      //     font-size: 18px;
+      //   }
+      .update {
+        margin-left: 20px;
+
+        .delete {
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+}

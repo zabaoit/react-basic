@@ -4,7 +4,7 @@ import MyComponent from "./Example/MyComponent";
 import ListToDo from "./Todo/ListToDo";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
+import ListUsers from "./Users/ListUsers";
 import Nav from "./Nav/Nav";
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 import Home from "./Example/Home";
@@ -22,6 +22,9 @@ function App() {
           <img src={logo} className="App-logo" alt="logo" />
 
           <Switch>
+            <Route path="/user">
+              <ListUsers />
+            </Route>
             <Route path="/about">
               <MyComponent />
             </Route>

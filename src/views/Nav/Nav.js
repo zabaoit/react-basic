@@ -29,6 +29,9 @@ class Nav extends react.Component {
                 <li>
                   <NavLink to="/about">About</NavLink>
                 </li>
+                <li>
+                  <NavLink to="/user">Users</NavLink>
+                </li>
               </ul>
             </nav>
           </div>

@@ -5,8 +5,9 @@ import ListToDo from "./Todo/ListToDo";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ListUsers from "./Users/ListUsers";
+import Detail from "./Users/DetailUser";
 import Nav from "./Nav/Nav";
-import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Home from "./Example/Home";
 /*
    2 components: class components => render() {...}/ function components (function, arrow function) => return (...)
@@ -22,7 +23,10 @@ function App() {
           <img src={logo} className="App-logo" alt="logo" />
 
           <Switch>
-            <Route path="/user">
+            <Route path="/users/:id">
+              <Detail />
+            </Route>
+            <Route path="/users">
               <ListUsers />
             </Route>
             <Route path="/about">

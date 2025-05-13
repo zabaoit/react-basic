@@ -1,5 +1,6 @@
 import React from "react";
-import { withRouter } from "react-router";
+
+import { connect } from "react-redux";
 
 class Home extends React.Component {
   componentDidMount() {
@@ -8,7 +9,7 @@ class Home extends React.Component {
     // }, 3000);
   }
   render() {
-    console.log(">>> check", this.props);
+    console.log(">>> check redux", this.props.dataRedux);
     // HOC
     return (
       <>
@@ -18,4 +19,10 @@ class Home extends React.Component {
   }
 }
 
-export default withRouter(Home);
+/////
+
+const mapStateToProps = state => {
+  return { dataRedux: state.users };
+};
+
+export default connect(mapStateToProps)(Home);

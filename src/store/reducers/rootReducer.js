@@ -1,5 +1,5 @@
 const initState = {
-  uers: [
+  users: [
     {
       id: 1,
       name: "BaoBao",
